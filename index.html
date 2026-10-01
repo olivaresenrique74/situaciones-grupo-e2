@@ -1,0 +1,291 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Situaciones Grupo E2</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap">
+<style>
+  /* Layout: una columna de bloques por servicio; barra de avance fija arriba. */
+  :root {
+    --azul: #1F3E6F;
+    --naranja: #FF751F;
+    --tinta: #1B2230;
+    --apagado: #5E6675;
+    --papel: #FBFAF8;
+    --superficie: #FFFFFF;
+    --linea: #E3E1DC;
+    --marca-fondo: #FFF3E9;
+    --display: 'Poppins', 'Segoe UI', system-ui, sans-serif;
+    color-scheme: light;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --azul: #9EBBEA;
+      --naranja: #FF9248;
+      --tinta: #F0EFEC;
+      --apagado: #A0A6B2;
+      --papel: #14171D;
+      --superficie: #1C2028;
+      --linea: #2E333D;
+      --marca-fondo: #2A1F16;
+      color-scheme: dark;
+    }
+  }
+  :root[data-theme="dark"] {
+    --azul: #9EBBEA;
+    --naranja: #FF9248;
+    --tinta: #F0EFEC;
+    --apagado: #A0A6B2;
+    --papel: #14171D;
+    --superficie: #1C2028;
+    --linea: #2E333D;
+    --marca-fondo: #2A1F16;
+    color-scheme: dark;
+  }
+
+  * { box-sizing: border-box; }
+  body {
+    background: var(--papel);
+    color: var(--tinta);
+    font-family: var(--display);
+    font-size: 15px;
+    line-height: 1.5;
+    margin: 0;
+  }
+  .envoltura { max-width: 860px; margin: 0 auto; padding: 0 20px; padding-block: 0 72px; }
+
+  header.intro { padding-block: 40px 20px; }
+  .eyebrow {
+    font-size: 11px; font-weight: 700; letter-spacing: 0.16em;
+    text-transform: uppercase; color: var(--naranja); margin: 0 0 10px;
+  }
+  h1 { font-size: clamp(26px, 5vw, 36px); line-height: 1.12; font-weight: 700; margin: 0 0 12px; text-wrap: balance; color: var(--azul); }
+  .bajada { margin: 0; max-width: 60ch; color: var(--apagado); font-size: 15px; }
+
+  .barra {
+    position: sticky; top: env(safe-area-inset-top, 0px); z-index: 20;
+    background: var(--superficie); border: 1px solid var(--linea); border-radius: 12px;
+    padding: 12px 16px; margin-block: 20px 28px;
+    display: flex; flex-wrap: wrap; gap: 12px; align-items: center; justify-content: space-between;
+  }
+  .avance { display: flex; align-items: center; gap: 12px; min-width: 0; }
+  .cuenta { font-weight: 600; font-size: 14px; font-variant-numeric: tabular-nums; }
+  .pista { width: 120px; height: 6px; border-radius: 99px; background: var(--linea); overflow: hidden; }
+  .pista span { display: block; height: 100%; background: var(--naranja); width: 0; transition: width .25s ease; }
+  .acciones { display: flex; gap: 8px; flex-wrap: wrap; }
+  button {
+    font-family: inherit; font-size: 13px; font-weight: 600; cursor: pointer;
+    border-radius: 8px; padding: 9px 14px; border: 1px solid var(--linea);
+    background: var(--superficie); color: var(--tinta);
+  }
+  button.primario { background: var(--azul); border-color: var(--azul); color: #fff; }
+  button:focus-visible { outline: 2px solid var(--naranja); outline-offset: 2px; }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) button.primario { color: #10141A; }
+  }
+  :root[data-theme="dark"] button.primario { color: #10141A; }
+
+  .bloque { border-top: 1px solid var(--linea); padding-block: 26px; }
+  .bloque:first-of-type { border-top: none; }
+  .cabeza { display: flex; flex-wrap: wrap; align-items: baseline; gap: 10px; margin-bottom: 14px; }
+  .num {
+    font-size: 12px; font-weight: 700; color: var(--naranja);
+    font-variant-numeric: tabular-nums; min-width: 22px;
+  }
+  .servicio { font-size: 17px; font-weight: 600; color: var(--azul); margin: 0; }
+  .nota { font-size: 12.5px; color: var(--apagado); margin: 0 0 14px 32px; }
+
+  .opciones { display: grid; gap: 6px; margin-left: 32px; }
+  @media (max-width: 480px) { .opciones, .nota { margin-left: 0; } }
+
+  label.opcion {
+    display: flex; align-items: flex-start; gap: 10px;
+    padding: 11px 13px; border: 1px solid var(--linea); border-radius: 9px;
+    background: var(--superficie); cursor: pointer; min-width: 0;
+    transition: border-color .15s ease, background .15s ease;
+  }
+  label.opcion:hover { border-color: var(--azul); }
+  label.opcion:has(input:checked) { border-color: var(--naranja); background: var(--marca-fondo); }
+  label.opcion:has(input:focus-visible) { outline: 2px solid var(--naranja); outline-offset: 2px; }
+  label.opcion input { margin: 3px 0 0; accent-color: var(--naranja); flex: none; }
+  .frase { min-width: 0; font-size: 14.5px; }
+  .marca {
+    font-size: 10px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;
+    color: var(--apagado); border: 1px solid var(--linea); border-radius: 99px;
+    padding: 2px 7px; margin-left: 8px; white-space: nowrap;
+  }
+
+  .resultado { margin-top: 36px; border: 1px solid var(--linea); border-radius: 12px; background: var(--superficie); padding: 20px; }
+  .resultado h2 { font-size: 17px; margin: 0 0 4px; color: var(--azul); }
+  .resultado p.sub { margin: 0 0 16px; font-size: 13px; color: var(--apagado); }
+  .final { display: grid; gap: 8px; }
+  .fila { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; padding: 9px 0; border-top: 1px solid var(--linea); font-size: 14px; }
+  .fila:first-child { border-top: none; }
+  .fila b { font-weight: 500; min-width: 0; }
+  .fila span { color: var(--azul); font-weight: 600; min-width: 0; }
+  @media (max-width: 560px) { .fila { grid-template-columns: 1fr; gap: 2px; } }
+  .aviso { font-size: 13px; color: var(--apagado); margin-top: 14px; }
+  @media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+</style>
+
+<div class="envoltura">
+  <header class="intro">
+    <p class="eyebrow">Presentación maestra · Lámina 58</p>
+    <h1>Dígame en qué situación está y le digo cuál servicio es.</h1>
+    <p class="bajada">Doce redacciones para cada una de las quince situaciones. Marque la que suene más a como lo diría un cliente suyo en voz alta; abajo se arma la lámina final.</p>
+  </header>
+
+  <div class="barra">
+    <div class="avance">
+      <span class="cuenta" id="cuenta">15 de 15 elegidas</span>
+      <span class="pista"><span id="pista"></span></span>
+    </div>
+    <div class="acciones">
+      <button id="restaurar">Volver a las actuales</button>
+      <button class="primario" id="copiar">Copiar las 15 finales</button>
+    </div>
+  </div>
+
+  <main id="lista"></main>
+
+  <section class="resultado">
+    <h2>La lámina como quedaría</h2>
+    <p class="sub">Orden de aparición, columna izquierda y derecha.</p>
+    <div class="final" id="final"></div>
+    <p class="aviso" id="aviso">Su selección queda guardada en este navegador. Cuando termine, cópiela y mándemela para dejarla en el PPTX.</p>
+  </section>
+</div>
+
+<script>
+const GRUPOS = [
+  { servicio: "Diagnóstico Integral", nota: "Es la puerta de entrada del catálogo. Debe sonar a alguien que sabe que algo no anda, no a alguien perdido.", op: ["“No sé por dónde empezar.”", "“Sé que algo está mal, pero no qué.”", "“Tengo veinte pendientes y no sé cuál va primero.”", "“Cada quien me dice algo distinto.”", "“Quiero ordenar la empresa y no sé por dónde.”", "“Me falta claridad, no ganas.”", "“Necesito que alguien de fuera me diga qué está roto.”", "“Llevo tres años diciendo que voy a ordenar esto.”", "“Mi socio y yo no coincidimos en cuál es el problema.”", "“Cada consultor que entra me vende lo suyo.”", "“Crecimos rápido y la estructura se quedó chica.”", "“Antes de gastar, quiero saber en qué.”"] },
+  { servicio: "Estandarización e Institucionalización", nota: "El dolor real es la dependencia del dueño. Entre más concreta la escena, más rápido se reconoce.", op: ["“Todo depende de mí y de dos personas más.”", "“Si me voy dos semanas, esto se para.”", "“Nada está escrito: todo está en la cabeza de alguien.”", "“Cada quien lo hace a su manera.”", "“No puedo crecer porque no puedo soltar.”", "“Si se va Juan, se va el proceso.”", "“Trabajo en mi empresa, no sobre mi empresa.”", "“Capacitar a alguien nuevo me toma seis meses.”", "“Mi equipo me pregunta absolutamente todo a mí.”", "“Vendemos bien, pero adentro es un desorden.”", "“Quiero irme de vacaciones sin el teléfono prendido.”", "“Lo que funciona aquí no funciona en la otra sucursal.”"] },
+  { servicio: "Gobierno, Riesgo y Cumplimiento", nota: "Aquí el miedo es familiar, no regulatorio. Vale la pena decirlo con todas sus letras.", op: ["“Temo que mis hijos peleen por el negocio.”", "“No quiero que mi empresa muera conmigo.”", "“Mis hijos ya están adentro y no hay reglas.”", "“¿Quién manda cuando yo ya no esté?”", "“La familia y la empresa se están mezclando.”", "“No tenemos consejo, tenemos comidas familiares.”", "“Quiero heredar una empresa, no un pleito.”", "“Mi hijo entró a la empresa y no sé con qué reglas.”", "“Tengo tres hijos y un solo negocio.”", "“Nunca hemos hablado de qué pasa si yo falto.”", "“Mis socios son mis hermanos y eso complica todo.”", "“Quiero poder retirarme algún día.”"] },
+  { servicio: "GRC Industria / Cumplimiento Normativo", nota: "Esta situación casi nunca nace adentro: la impone un cliente grande. La urgencia es el argumento.", op: ["“Mi cliente me pidió una auditoría de compliance.”", "“Sin certificación me sacan del padrón de proveedores.”", "“Me mandaron un cuestionario que no sé responder.”", "“Mi cliente más grande me está auditando.”", "“Nos piden compliance para seguirles facturando.”", "“Quiero venderle a una armadora y me piden requisitos.”", "“Tengo treinta días para acreditar cumplimiento.”", "“Perdí una licitación por no tener el papel.”", "“Mi cliente cambió de política y ahora exige más.”", "“Me pidieron un código de ética y no tengo ninguno.”", "“Quiero entrar a cadenas grandes y no califico.”", "“Nos van a visitar la planta y no sé qué revisan.”"] },
+  { servicio: "Arquitectura de Franquicias", nota: "Distinguir esta de la siguiente es lo que evita que el prospecto compre el servicio equivocado.", op: ["“Quiero franquiciar mi negocio.”", "“Me piden abrir en otra ciudad y no sé cómo.”", "“Mi negocio funciona; ahora quiero replicarlo.”", "“Quiero crecer sin poner yo todo el capital.”", "“Ya me preguntaron tres veces si vendo franquicias.”", "“Sé operar uno. No sé operar veinte.”", "“Quiero vender mi modelo, no solo mi producto.”", "“Tengo dos sucursales y la segunda no se parece a la primera.”", "“Me quieren comprar una franquicia y no tengo qué venderles.”", "“Ya no quiero abrir más sucursales propias.”", "“Todo lo que sé está en mi cabeza, no en un manual.”", "“Quiero mi marca en otros estados.”"] },
+  { servicio: "Marco Jurídico de Franquicias", nota: "El que ya tiene modelo llega con prisa y con presupuesto acotado. Hay que sonar a último tramo.", op: ["“Ya tengo el modelo, solo necesito los contratos.”", "“Tengo los manuales; me falta el respaldo legal.”", "“Voy a firmar con mi primer franquiciatario.”", "“Necesito la COF y el contrato, nada más.”", "“El modelo ya opera; falta blindarlo.”", "“Tengo franquiciatarios y ningún contrato serio.”", "“Me falta la parte legal para poder vender.”", "“Mi abogado no maneja temas de franquicia.”", "“Ya hay interesados y no tengo con qué formalizar.”", "“Presté mi marca de palabra y quiero ordenarlo.”", "“Me dicen que necesito una COF y no sé qué es.”", "“Necesito proteger el modelo antes de enseñarlo.”"] },
+  { servicio: "Análisis y Dictamen", nota: "Es el único caso donde el prospecto es comprador, no dueño. La frase debe dejarlo claro de inmediato.", op: ["“Me van a hacer firmar una franquicia.”", "“Antes de firmar, quiero que alguien lo revise.”", "“Me van a vender una franquicia y no sé si conviene.”", "“El contrato tiene cuarenta páginas y no lo entiendo.”", "“Voy a invertir fuerte y quiero una segunda opinión.”", "“¿Esta franquicia es lo que dice ser?”", "“No quiero enterarme de las letras chiquitas después.”", "“Me van a pedir una cuota inicial fuerte.”", "“El vendedor me está apurando para firmar.”", "“Quiero saber qué pasa si el negocio no camina.”", "“¿De verdad me van a dar el soporte que prometen?”", "“Es la inversión más grande de mi vida.”"] },
+  { servicio: "Dictamen para Acción Jurídica", nota: "El valor está en decidir, no en pelear. La frase tiene que sonar a duda, no a rabia.", op: ["“Tengo un conflicto y no sé si demandar.”", "“¿Peleo o negocio?”", "“Quiero saber si tengo caso antes de gastar.”", "“Me deben dinero y no sé hasta dónde puedo llegar.”", "“Un abogado me dice que sí y otro que no.”", "“No quiero un pleito de tres años.”", "“Necesito saber qué tan fuerte estoy parado.”", "“Mi exsocio se quedó con cosas de la empresa.”", "“Quiero saber cuánto me va a costar pelearlo.”", "“Ya me demandaron y no sé qué tan grave es.”", "“Prefiero un acuerdo, pero no a cualquier precio.”", "“Quiero una opinión que no sea de quien cobraría el juicio.”"] },
+  { servicio: "Constitución Llave en Mano", nota: "La compra es un trámite; la venta está en hacerlo bien desde el origen.", op: ["“Vamos a abrir la empresa entre socios.”", "“Somos tres socios y hay que hacerlo bien desde hoy.”", "“Vamos a formalizar lo que ya estamos operando.”", "“Nos vamos a asociar y quiero reglas claras.”", "“Voy a constituir y no quiero errores de origen.”", "“Hoy somos amigos; el papel es para cuando no lo seamos.”", "“Quiero abrir la empresa sin andar de notaría en notaría.”", "“Vengo operando como persona física y ya no me alcanza.”", "“Quiero constituir bien, no nada más constituir.”", "“Metemos capital distinto y quiero que quede claro.”", "“Ya nos peleamos una vez sin papeles de por medio.”", "“Voy a recibir inversión y necesito la figura correcta.”"] },
+  { servicio: "Constitución de Filial Extranjera", nota: "Quien llega aquí ya decidió entrar a México. La frase solo tiene que identificarlo.", op: ["“Somos extranjeros y queremos operar en México.”", "“Mi matriz está afuera y quiero abrir aquí.”", "“Vamos a instalar operación en México.”", "“Queremos facturar en México, no solo vender.”", "“Necesitamos entidad mexicana para poder contratar.”", "“Nuestro corporativo pide subsidiaria local.”", "“Queremos entrar a México y hacerlo bien.”", "“Queremos contratar personal mexicano.”", "“Mis clientes en México me piden factura local.”", "“No sé qué figura me conviene para entrar.”", "“Vamos a abrir planta en México.”", "“Nuestro abogado de allá no conoce México.”"] },
+  { servicio: "Propiedad Intelectual", nota: "Funciona mejor cuando la frase implica que ya hay algo que perder.", op: ["“Mi marca no está protegida.”", "“Alguien más está usando mi nombre.”", "“Llevo diez años con la marca y nunca la registré.”", "“Me llegó un requerimiento por mi marca.”", "“Quiero registrar antes de que alguien se me adelante.”", "“Mi marca vale más que mi inventario y no es mía.”", "“Voy a crecer y la marca sigue a nombre de nadie.”", "“Vendo en línea y me copiaron el nombre.”", "“Voy a franquiciar y la marca no está a mi nombre.”", "“Registré una clase y resulta que necesitaba otra.”", "“Mi marca está a nombre de un excolaborador.”", "“Todo mi valor está en el nombre y no lo tengo protegido.”"] },
+  { servicio: "Consultoría Fiscal y Defensa", nota: "El miedo al SAT es real y se dice en voz baja. Conviene que la lámina lo diga en voz alta.", op: ["“Le tengo miedo al SAT.”", "“Me llegó una carta invitación.”", "“No sé si mi contador lo está haciendo bien.”", "“Duermo mal por el tema fiscal.”", "“Me van a revisar y no sé qué van a encontrar.”", "“Quiero pagar lo que debo, ni un peso más.”", "“Cada declaración es un acto de fe.”", "“Mi contador se fue y no sé cómo quedé.”", "“Me bloquearon el sello digital.”", "“Facturo bien, pero no sé si estoy bien.”", "“Quiero crecer sin que el SAT sea el problema.”", "“Tengo dos empresas y no sé si es la estructura correcta.”"] },
+  { servicio: "Reingeniería Laboral", nota: "La Ley Silla caduca como gancho. Conviene tener una versión que no dependa de una reforma específica.", op: ["“Me preocupan las inspecciones y la Ley Silla.”", "“Cada demanda laboral la pierdo.”", "“Mis contratos son los mismos de hace diez años.”", "“No sé si aguanto una inspección.”", "“Cambió la ley y yo no he cambiado nada.”", "“Cada salida de un empleado me cuesta.”", "“Tengo gente, pero no tengo estructura laboral.”", "“Tengo cincuenta empleados y un reglamento de hace años.”", "“Perdí una demanda que no debí perder.”", "“No sé cuánto me costaría liquidar a alguien hoy.”", "“Mis contratos los bajé de internet.”", "“Voy a contratar treinta personas más.”"] },
+  { servicio: "Gestión de Proyectos y PMO", nota: "Es el servicio que menos se busca por nombre: la frase tiene que hacer todo el trabajo.", op: ["“Mi proyecto estratégico se está desviando.”", "“Llevamos seis meses y vamos a la mitad.”", "“Todos están ocupados y nada avanza.”", "“El proyecto se pasó de tiempo y de presupuesto.”", "“Nadie me sabe decir en qué porcentaje vamos.”", "“Arrancamos con todo y se fue diluyendo.”", "“Tengo el proyecto; me falta quien lo dirija.”", "“El proyecto lo lleva quien tiene tiempo, no quien sabe.”", "“Cada área avanza por su lado.”", "“Ya invertimos y no veo resultados.”", "“Es la tercera vez que intentamos este proyecto.”", "“Necesito quien lo dirija de tiempo completo, sin contratarlo.”"] },
+  { servicio: "Legal360 Shield", nota: "Cierra la lámina y es el único servicio recurrente: la frase debe sugerir permanencia, no urgencia.", op: ["“Necesito abogado, pero no de emergencia.”", "“Le hablo a mi abogado solo cuando ya hay problema.”", "“Firmo contratos sin que nadie los revise.”", "“Cada consulta legal es negociar un honorario nuevo.”", "“Quiero un abogado de cabecera, no de urgencias.”", "“No tengo quien me vea lo legal todos los días.”", "“Pago caro por apagar incendios que se pudieron prevenir.”", "“Gasté más en abogados de emergencia que lo que costaría prevenirlo.”", "“Quiero presupuesto legal fijo, sin sorpresas.”", "“Tengo dudas legales chicas y no me atrevo a preguntar.”", "“Mi abogado cobra por hora y prefiero no llamarle.”", "“Necesito que alguien vea mis contratos antes de que yo firme.”"] },
+];
+
+const CLAVE = "e2-situaciones-v1";
+let elegidas = GRUPOS.map(() => 0);
+
+try {
+  const guardado = localStorage.getItem(CLAVE);
+  if (guardado) {
+    const parsed = JSON.parse(guardado);
+    if (Array.isArray(parsed) && parsed.length === GRUPOS.length) elegidas = parsed;
+  }
+} catch (e) { /* sin almacenamiento disponible */ }
+
+function guardar() {
+  try { localStorage.setItem(CLAVE, JSON.stringify(elegidas)); } catch (e) { /* ignorar */ }
+}
+
+const lista = document.getElementById("lista");
+GRUPOS.forEach((g, gi) => {
+  const bloque = document.createElement("section");
+  bloque.className = "bloque";
+
+  const cabeza = document.createElement("div");
+  cabeza.className = "cabeza";
+  const num = document.createElement("span");
+  num.className = "num";
+  num.textContent = String(gi + 1).padStart(2, "0");
+  const serv = document.createElement("h2");
+  serv.className = "servicio";
+  serv.textContent = g.servicio;
+  cabeza.append(num, serv);
+
+  const nota = document.createElement("p");
+  nota.className = "nota";
+  nota.textContent = g.nota;
+
+  const opciones = document.createElement("div");
+  opciones.className = "opciones";
+  g.op.forEach((texto, oi) => {
+    const label = document.createElement("label");
+    label.className = "opcion";
+    const input = document.createElement("input");
+    input.type = "radio";
+    input.name = "g" + gi;
+    input.id = "g" + gi + "o" + oi;
+    input.checked = elegidas[gi] === oi;
+    input.addEventListener("change", () => { elegidas[gi] = oi; guardar(); pintarFinal(); });
+    const frase = document.createElement("span");
+    frase.className = "frase";
+    frase.textContent = texto;
+    label.append(input, frase);
+    if (oi === 0) {
+      const marca = document.createElement("span");
+      marca.className = "marca";
+      marca.textContent = "Actual";
+      frase.append(marca);
+    }
+    opciones.append(label);
+  });
+
+  bloque.append(cabeza, nota, opciones);
+  lista.append(bloque);
+});
+
+const final = document.getElementById("final");
+const cuenta = document.getElementById("cuenta");
+const pista = document.getElementById("pista");
+
+function pintarFinal() {
+  final.textContent = "";
+  let cambiadas = 0;
+  GRUPOS.forEach((g, gi) => {
+    if (elegidas[gi] !== 0) cambiadas++;
+    const fila = document.createElement("div");
+    fila.className = "fila";
+    const izq = document.createElement("b");
+    izq.textContent = g.op[elegidas[gi]];
+    const der = document.createElement("span");
+    der.textContent = g.servicio;
+    fila.append(izq, der);
+    final.append(fila);
+  });
+  cuenta.textContent = cambiadas === 0
+    ? "Sin cambios respecto a la lámina actual"
+    : cambiadas + (cambiadas === 1 ? " situación cambiada" : " situaciones cambiadas");
+  pista.style.width = Math.round((cambiadas / GRUPOS.length) * 100) + "%";
+}
+
+document.getElementById("restaurar").addEventListener("click", () => {
+  elegidas = GRUPOS.map(() => 0);
+  guardar();
+  document.querySelectorAll(".opciones input").forEach((input) => {
+    input.checked = input.id.endsWith("o0");
+  });
+  pintarFinal();
+});
+
+document.getElementById("copiar").addEventListener("click", (ev) => {
+  const texto = GRUPOS.map((g, gi) => g.op[elegidas[gi]] + "\t" + g.servicio).join("\n");
+  const boton = ev.currentTarget;
+  const original = boton.textContent;
+  const ok = () => { boton.textContent = "Copiado"; setTimeout(() => { boton.textContent = original; }, 1600); };
+  const falla = () => {
+    const rango = document.createRange();
+    rango.selectNodeContents(final);
+    const sel = window.getSelection();
+    sel.removeAllRanges();
+    sel.addRange(rango);
+    document.getElementById("aviso").textContent = "No pude copiar automáticamente: el texto quedó seleccionado abajo, cópielo con Ctrl+C.";
+  };
+  try {
+    navigator.clipboard.writeText(texto).then(ok).catch(falla);
+  } catch (e) { falla(); }
+});
+
+pintarFinal();
+</script>
+
+</body></html>
